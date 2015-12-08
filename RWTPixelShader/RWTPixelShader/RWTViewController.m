@@ -30,10 +30,10 @@
   glkView.context = context;
   
   // OpenGL ES settings
-  glClearColor(1.f, 0.f, 0.f, 1.f);
+  glClearColor(.16f, 0.f, .22f, 1.f);
   
   // Initialize shader
-  self.shader = [[RWTBaseShader alloc] initWithVertexShader:@"RWTBase" fragmentShader:@"RWTNoise"];
+  self.shader = [[RWTBaseShader alloc] initWithVertexShader:@"RWTBase" fragmentShader:@"RWTGradient"];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {

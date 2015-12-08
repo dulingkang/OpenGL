@@ -7,7 +7,7 @@
 //
 
 // Precision
-precision mediump float;
+precision highp float;
 uniform vec2 uResolution;
 const vec3 cLight = normalize(vec3(.5, .5, 1.));
 
