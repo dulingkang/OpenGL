@@ -12,7 +12,7 @@ class OpenGLView: UIView {
 
     var eaglLayer: CAEAGLLayer!
     var context: EAGLContext?
-    var colorRenderBuffer: GLuint = 0
+    var colorRenderBuffer: GLuint = 1
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +38,7 @@ class OpenGLView: UIView {
     private func setupLayer() {
         eaglLayer = CAEAGLLayer(layer: self.layer)
         eaglLayer.opaque = true
+        self.layer.addSublayer(eaglLayer)
     }
     
     private func setupContext() {
@@ -68,8 +69,9 @@ class OpenGLView: UIView {
     }
     
     private func render() {
-        glClearColor(0, 1, 1, 1.0)
+        glClearColor(0.6, 0.6, 0, 1.0)
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
-        context?.presentRenderbuffer(Int(GL_RENDERBUFFER))
+        let success = context?.presentRenderbuffer(Int(GL_RENDERBUFFER))
+        print(success)
     }
 }
