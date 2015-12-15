@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var glView: OpenGLView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.clearColor()
+        glView = OpenGLView.init(frame: self.view.bounds)
+        self.view.addSubview(glView)
+        
     }
 
     override func didReceiveMemoryWarning() {
